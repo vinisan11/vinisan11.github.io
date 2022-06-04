@@ -168,11 +168,11 @@
 
     <div style="width:100%;text-align:center;margin:30px 0px;height:80px;font-size:18px" id="previewasc"></div>
     
-    <form class="uk-form uk-form-stacked"  id="frm" style="margin-top:20px" method="POST" action="" ">
+    <form class="uk-form uk-form-stacked"  id="frm" style="margin-top:20px" method="POST" action="" onsubmit="javascript:if(valida()==false) event.preventDefault();">
         <div class="uk-grid">
             <div class="uk-width-1-1">
             	<label class="uk-form-label" >Escreva a Equação a ser calculada:</label>        
-            	<input type="text" class="uk-form-large uk-width-1-1,input" class="input" placeholder="" name="formula"  id="formula" />
+            	<input type="text" class="uk-form-large uk-width-1-1,input" class="input" placeholder="" name="formula"  id="formula" onchange="mostraprev()" onkeyup="mostraprev()" onblur="setcarret()"/>
             	            
             </div>
             <div class="uk-width-1-1">&nbsp;</div>
