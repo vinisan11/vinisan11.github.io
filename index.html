@@ -1182,37 +1182,42 @@ img.hover-shadow {
 		<div class="quad flotlftdgreen"></div> Arco 
 	</div>
 
-    <div style="width:100%;text-align:center;margin:30px 0px;height:80px;font-size:18px" id="previewasc"></div>
+ <div style="width:100%;text-align:center;margin:30px 0px;height:80px;font-size:18px" id="previewasc"></div>
     
-    <form class="uk-form uk-form-stacked" id="frm" style="margin-top:20px" method="POST" action="" onsubmit="javascript:if(valida()==false) event.preventDefault();">
+    <form class="uk-form uk-form-stacked"  id="frm" style="margin-top:20px" method="POST" action="" onsubmit="javascript:if(valida()==false) event.preventDefault();">
         <div class="uk-grid">
             <div class="uk-width-1-1">
             	<label class="uk-form-label" >Escreva a Equação a ser calculada:</label>        
-            	<input type="text" class="uk-form-large uk-width-1-1" placeholder="" name="formula" id="formula" onchange="mostraprev()" onkeyup="mostraprev()" onblur="setcarret()"/>
-            	<input type="hidden" id="formula2" name="formula2" />            
+            	<input type="text" class="uk-form-large uk-width-1-1,input" class="input" placeholder="" name="formula"  id="formula" onchange="mostraprev()" onkeyup="mostraprev()" onblur="setcarret()"/>
+            	            
             </div>
             <div class="uk-width-1-1">&nbsp;</div>
             <div class="uk-width-1-1" style="text-align:center">
-<!-- br !-->
-<br>
-<br>
-<br>
-<!-- br !-->
-				<button class="uk-button">Calcular</button>
+		    
+		    <input type="button"  id="execCopy" style="color:white" class="uk-button" title="Mudar para modo Projetor de Equação" value="Copiar" >
+		    
             </div>
         </div>
     </form>
 
 </div>
-<div id="resultado" class="uk-overflow-container">&nbsp;</div>
+
+<div id="resultado" class="uk-overflow-container" style="margin-top:20px,text" method="POST" action="">&nbsp;</div>
+
+
+<div id="prop_dentro">
 
 
 
-<div id="prop_dentro"> </div>
-		
-								
-	
 
+
+  <script type="text/javascript">
+document.getElementById('execCopy').addEventListener('click', execCopy);
+function execCopy() {
+  document.querySelector("input").select();
+  document.execCommand("copy");
+} 
+    </script>
 </div>
 
 
