@@ -1133,7 +1133,7 @@ img.hover-shadow {
         <div class="uk-grid">
             <div class="uk-width-1-1">
             	<label class="uk-form-label" >Escreva a Equação a ser calculada:</label>        
-            	<input type="text" class="uk-form-large uk-width-1-1,input" class="input" placeholder="" name="formula"  id="formula" onchange="mostraprev()" onkeyup="mostraprev()" onblur="setcarret()"/>
+            	<input type="text" class="uk-form-large uk-width-1-1" class="copia" placeholder="" name="formula"  id="formula" onchange="mostraprev()" onkeyup="mostraprev()" onblur="setcarret()"/>
             	            
             </div>
             <div class="uk-width-1-1">&nbsp;</div>
@@ -1159,7 +1159,7 @@ img.hover-shadow {
   <script type="text/javascript">
 document.getElementById('execCopy').addEventListener('click', execCopy);
 function execCopy() {
-  document.querySelector("input").select();
+  document.querySelector("input").select("copia");
   document.execCommand("copy");
 } 
     </script>	
