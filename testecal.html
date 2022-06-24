@@ -1187,7 +1187,7 @@ img.hover-shadow {
 
     <div style="width:100%;text-align:center;margin:30px 0px;height:80px;font-size:18px" id="previewasc"></div>
     
-    <form class="uk-form uk-form-stacked"  id="frm" style="margin-top:20px" method="POST" action="" onsubmit="javascript:if(valida()==false) event.preventDefault();">
+    <div class="uk-form uk-form-stacked"  id="frm" style="margin-top:20px" method="POST" action="" onsubmit="javascript:if(valida()==false) event.preventDefault();">
         <div class="uk-grid">
             <div class="uk-width-1-1">
             	<label class="uk-form-label" >Escreva a Equação a ser calculada:</label>        
@@ -1197,11 +1197,11 @@ img.hover-shadow {
             <div class="uk-width-1-1">&nbsp;</div>
             <div class="uk-width-1-1" style="text-align:center">
 		    
-		    <input type="button"  id="execCopy" style="color:white" class="uk-button" title="Mudar para modo Projetor de Equação" value="Copiar" >
+		    <input type="button"  id="execCopy" style="color:white" class="uk-button" title="Mudar para modo Projetor de Equação" accesskey="13" value="Copiar" >
 		    
             </div>
         </div>
-    </form>
+    </div>
 
 </div>
 
@@ -1211,17 +1211,7 @@ img.hover-shadow {
 <div id="prop_dentro">
 
 
-
-
-
-  <script type="text/javascript">
-document.getElementById('execCopy').addEventListener('click', execCopy);
-function execCopy() {
-  document.getElementById("formula").select();
-  document.execCommand("copy");
-} 
-    </script>	
-	
+<input type="text">  </input>
 	
 </article>
 			</main>
@@ -1231,9 +1221,27 @@ function execCopy() {
 								</div>
 	
 	
-		
-		
+  	
+	
+	
+	
+	
+	
+<script>	
+	document.getElementById('formula').onkeypress=function(e){
+    if(e.keyCode==13){
+        document.getElementById('execCopy').click('copy');
+    }
+}
+</script>
 
+  <script type="text/javascript">
+document.getElementById('execCopy').addEventListener('click', execCopy);
+function execCopy() {
+  document.getElementById("formula").select();
+  document.execCommand("copy");
+} 
+    </script>	
 	
 
 <script type="text/javascript">
